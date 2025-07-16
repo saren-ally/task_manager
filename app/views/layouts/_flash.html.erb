@@ -1,0 +1,19 @@
+<% if flash.present? %>
+    <% flash.each do |type, msg| %>
+      <div class="bg-red-100 text-cb-pink px-4 py-3 rounded relative text-center" role="alert">
+        <strong class="font-bold"></strong>
+        <span class="">
+          <% if msg.is_a? String %>
+            <%= msg %>
+          <% else %>
+            <% msg.each do |message|%>
+              <ul>
+                <li><%= message %></li>
+              </ul>
+            <% end %>
+          <% end %>
+        </span>
+      </div>
+    <% end %>
+  </div>
+<% end %>
