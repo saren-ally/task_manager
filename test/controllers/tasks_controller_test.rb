@@ -46,4 +46,20 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
 
     assert_redirected_to task_path(Task.last)
   end
+
+    test "should not create task with invalid params" do
+    assert_no_difference("Task.count") do
+      post tasks_url, params: {
+        task: {
+          title: "",
+          description: "",
+          status: nil,
+          due: nil
+        }
+      }
+    end
+
+    assert_response :unprocessable_entity
+    assert_select "form"
+  end
 end
