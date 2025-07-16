@@ -62,4 +62,14 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
     assert_response :unprocessable_entity
     assert_select "form"
   end
+
+  test "should delete task" do
+    assert_difference("Task.count", -1) do
+      delete task_delete_url(@task)
+    end
+
+    assert_redirected_to tasks_path
+    follow_redirect!
+    assert_match "Task deleted", response.body
+  end
 end
