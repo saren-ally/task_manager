@@ -72,4 +72,9 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
     follow_redirect!
     assert_match "Task deleted", response.body
   end
+
+  test "should redirect using find action" do
+    post find_task_url, params: { id: @task.id }
+    assert_redirected_to task_path(@task)
+  end
 end
