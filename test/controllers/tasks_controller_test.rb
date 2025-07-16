@@ -23,10 +23,12 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
     get tasks_url
     assert_response :success
   end
+
   test "should get new" do
     get new_task_url
     assert_response :success
   end
+
   test "should show task" do
     get task_url(@task)
     assert_response :success
