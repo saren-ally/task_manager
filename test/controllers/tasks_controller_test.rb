@@ -18,4 +18,9 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
       assert_match task.title, response.body
     end
   end
+
+  test "should get index" do
+    get tasks_url
+    assert_response :success
+  end
 end
