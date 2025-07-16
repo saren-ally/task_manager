@@ -11,14 +11,15 @@ class TasksController < ApplicationController
     @task = Task.find(params[:id])
   end
 
-  def create
-    @task = Task.new(task_params)
-    if @task.save
-      redirect_to task_path(@task)
-    else
-      render :new
-    end
+ def create
+  @task = Task.new(task_params)
+
+  if @task.save
+    redirect_to @task, notice: "Task was successfully created."
+  else
+    render :new, status: :unprocessable_entity
   end
+end
 
   def delete
     @task = Task.find(params[:id])
