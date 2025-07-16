@@ -1,0 +1,29 @@
+<div class="flex flex-col">
+  <%= link_to "Back", tasks_path, class: "bg-gray-600 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-4" %>
+
+  <div class="mt-4 flex flex-col">
+    <p class="mb-4">Create new Task:</p>
+
+    <%= form_with model: @task do |f| %>
+      <div class="flex flex-col gap-2">
+        <%= f.label :title %>
+        <%= f.text_field :title, placeholder: "Task title", class: "border border-gray-400 py-2 px-4 placeholder:text-gray-400" %>
+
+        <%= f.label :description %>
+        <%= f.text_area :description, class: "border border-gray-400 py-2 px-4" %>
+
+        <%= f.label :status %>
+        <%= f.select :status, Task.statuses.keys.map { |key| [key.humanize, key] }, {}, class: "border border-gray-400 py-2 px-4" %>
+
+
+        <%= f.label :due %>
+        <%= f.date_field :due, class: "border border-gray-400 py-2 px-4" %>
+
+
+        <%= f.submit "Create", class: "bg-gray-600 hover:bg-blue-700 text-white font-bold py-2 px-4" %>
+      </div>
+    <% end %>
+
+
+  </div>
+</div>
