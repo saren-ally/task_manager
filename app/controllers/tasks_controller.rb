@@ -1,9 +1,11 @@
 class TasksController < ApplicationController
   def index
-    @tasks = Task.all
+    @tasks = Task.all.order(created_at: :desc)
   end
 
   def new
+    # todo -paginate/eagerload
+    # see README re scaling concerns
     @task = Task.new
   end
 
@@ -15,8 +17,9 @@ class TasksController < ApplicationController
   @task = Task.new(task_params)
 
   if @task.save
-    redirect_to @task, notice: "Task was successfully created."
+    redirect_to tasks_path, notice: "Task was successfully created."
   else
+    flash.now[:notice] = "Please fix the errors below." # Optional
     render :new, status: :unprocessable_entity
   end
 end

@@ -46,7 +46,7 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
       }
     end
 
-    assert_redirected_to task_path(Task.last)
+    assert_redirected_to tasks_path
   end
 
     test "should not create task with invalid params" do
