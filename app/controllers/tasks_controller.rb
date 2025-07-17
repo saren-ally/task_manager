@@ -24,7 +24,11 @@ end
   def delete
     @task = Task.find(params[:id])
     @task.destroy
-    redirect_to tasks_path, notice: "Task deleted"
+
+    respond_to do |format|
+      format.turbo_stream { head :no_content }
+      format.html { redirect_to tasks_path, notice: "Task deleted." }
+    end
   end
 
 def find
