@@ -135,7 +135,6 @@
           1,
           null,
           null,
-          null,
           null
         ]
       },
@@ -162,6 +161,40 @@
       "/Users/hez/code/task_manager/app/models/application_record.rb": {
         "lines": [
           1,
+          1,
+          null
+        ]
+      },
+      "/Users/hez/code/task_manager/app/controllers/home_controller.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          null
+        ]
+      },
+      "/Users/hez/code/task_manager/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/hez/code/task_manager/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/hez/code/task_manager/app/helpers/home_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/hez/code/task_manager/app/helpers/tasks_helper.rb": {
+        "lines": [
           1,
           null
         ]
@@ -215,42 +248,8 @@
           null,
           null
         ]
-      },
-      "/Users/hez/code/task_manager/app/controllers/application_controller.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          null
-        ]
-      },
-      "/Users/hez/code/task_manager/app/helpers/application_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/hez/code/task_manager/app/helpers/home_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/hez/code/task_manager/app/helpers/tasks_helper.rb": {
-        "lines": [
-          1,
-          null
-        ]
-      },
-      "/Users/hez/code/task_manager/app/controllers/home_controller.rb": {
-        "lines": [
-          1,
-          1,
-          null,
-          null
-        ]
       }
     },
-    "timestamp": 1752872096
+    "timestamp": 1752872540
   }
 }
