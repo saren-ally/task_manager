@@ -9,6 +9,21 @@ class TasksController < ApplicationController
     @task = Task.new
   end
 
+  def edit
+    @task = Task.find(params[:id])
+  end
+
+  def update
+    @task = Task.find(params[:id])
+
+    if @task.update(task_params)
+      redirect_to tasks_path, notice: "Task was successfully updated."
+    else
+      flash.now[:notice] = "Please fix the errors below." # Optional
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
   def show
     @task = Task.find(params[:id])
   end

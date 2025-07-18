@@ -79,4 +79,43 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
     post find_task_url, params: { id: @task.id }
     assert_redirected_to task_path(@task)
   end
+
+  test "should get edit" do
+    get edit_task_url(@task)
+    assert_response :success
+    assert_select "h1", "Edit"
+  end
+
+  test "should update task with valid data" do
+    patch task_url(@task), params: {
+      task: {
+        title: "Updated title",
+        description: "Updated description",
+        status: "In progress",
+        due: Date.today + 5.days
+      }
+    }
+
+    assert_redirected_to tasks_path
+    follow_redirect!
+    assert_match "Task was successfully updated", response.body
+
+    @task.reload
+    assert_equal "Updated title", @task.title
+  end
+
+  test "should not update task with invalid data" do
+    patch task_url(@task), params: {
+      task: {
+        title: "",
+        description: "Still here",
+        status: "In progress",
+        due: Date.today + 5.days
+      }
+    }
+
+    assert_response :unprocessable_entity
+    assert_select "div", /There were some problems with your submission/
+    assert_select "li", /Title can't be blank/
+  end
 end
