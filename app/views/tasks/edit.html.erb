@@ -1,0 +1,42 @@
+<div class="flex flex-col">
+  <%= link_to tasks_path, class: "" do %>
+    <%= image_tag "back.svg", alt: "Back", class: "w-10 h-10 fill-current text-red-600 pt-1 hover:cursor-pointer" %>
+  <% end %>
+
+  <div class="mt-4 flex flex-col">
+    <h1 class="mb-4 font-bold text-2xl">Edit</h1>
+
+
+    <!-- validation errors -->
+    <% if @task.errors.any? %>
+      <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-4">
+        <p class="font-bold">There were some problems with your submission:</p>
+        <ul class="list-disc list-inside mt-2">
+          <% @task.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <%= form_with model: @task do |f| %>
+      <div class="flex flex-col gap-2">
+        <%= f.label :title %>
+        <%= f.text_field :title, placeholder: "Task title", class: "border border-gray-400 py-2 px-4 placeholder:text-gray-400" %>
+
+        <%= f.label :description %>
+        <%= f.text_area :description, class: "border border-gray-400 py-2 px-4" %>
+
+        <%= f.label :status %>
+        <%= f.select :status, Task.statuses.keys.map { |key| [key.humanize, key] }, {}, class: "border border-gray-400 py-2 px-4" %>
+
+
+        <%= f.label :due %>
+        <%= f.date_field :due, class: "border border-gray-400 py-2 px-4" %>
+
+
+        <%= f.submit "Edit", class: "bg-gray-600 hover:bg-blue-700 text-white font-bold py-2 px-4" %>
+      </div>
+    <% end %>
+  </div>
+</div>
