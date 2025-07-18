@@ -1,11 +1,11 @@
-<div class="flex flex-col items-center">
-  <div class="w-1/2">
+<div class="md:flex md:flex-col md:items-center">
+  <div class="md:w-1/2">
     <div class="mt-4">
       <p>Retrieve task by ID</p>
 
-      <div class="mb-4">
+      <div class="mb-4 ">
         <%= form_with url: find_task_path, local: true do |form| %>
-          <div class="flex flex-col gap-2">
+          <div class="flex flex-col gap-2 w-full">
             <%= form.text_field :id, placeholder: "Enter Task ID", class: "border border-gray-400 py-2 px-4" %>
             <%= form.submit "Retrieve", class: "bg-gray-600 hover:bg-blue-700 text-white font-bold py-2 px-4" %>
           </div>
