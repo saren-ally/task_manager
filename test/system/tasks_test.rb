@@ -3,7 +3,7 @@ require "application_system_test_case"
 
 class TasksTest < ApplicationSystemTestCase
   test "deletes a task via Stimulus" do
-  task = Task.create!(title: "Test Task", description: "Sample", status: "in_progress", due: Date.today + 1)
+  task = Task.create!(title: "Test Task", description: "Sample", status: "In progress", due: Date.today + 1)
 
   visit tasks_path
 

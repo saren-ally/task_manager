@@ -13,7 +13,7 @@
       <img src="./assets/0.13.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2025-07-18T11:59:09+01:00">2025-07-18T11:59:09+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2025-07-18T22:10:15+01:00">2025-07-18T22:10:15+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -1210,7 +1210,7 @@
 
             
 
-            <code class="ruby">  enum :status, { in_progress: 0, completed: 1 }</code>
+            <code class="ruby">  enum :status, { &quot;In progress&quot;: 0, &quot;Completed&quot;: 1 }</code>
           </li>
         </div>
       
@@ -1796,7 +1796,7 @@
 
             
 
-            <code class="ruby">  test &quot;should create task with default status of &#39;in_progress&#39;&quot; do</code>
+            <code class="ruby">  test &quot;should create task with default status of &#39;In progress&#39;&quot; do</code>
           </li>
         </div>
       
@@ -1860,7 +1860,7 @@
 
             
 
-            <code class="ruby">          status: &quot;in_progress&quot;,</code>
+            <code class="ruby">          status: &quot;In progress&quot;,</code>
           </li>
         </div>
       
@@ -2542,7 +2542,7 @@
 
             
 
-            <code class="ruby">  test &quot;index should show &#39;Show&#39; and &#39;delete&#39; buttons with correct paths&quot; do</code>
+            <code class="ruby">  test &quot;index should show delete button with correct path and attributes&quot; do</code>
           </li>
         </div>
       
@@ -2603,29 +2603,17 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="12">
-            
-              <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="12">
             
 
             
 
-            <code class="ruby">    assert_select &quot;a[href=&#39;#{task_path(task)}&#39;]&quot;, text: &quot;Show&quot;</code>
+            <code class="ruby">    # Assert the delete form is present</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="13">
-            
-
-            
-
-            <code class="ruby"></code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="covered" data-hits="1" data-linenumber="14">
+          <li class="covered" data-hits="1" data-linenumber="13">
             
               <span class="hits">1</span>
             
@@ -2637,7 +2625,7 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="15">
+          <li class="covered" data-hits="1" data-linenumber="14">
             
               <span class="hits">1</span>
             
@@ -2645,6 +2633,18 @@
             
 
             <code class="ruby">      assert_select &quot;input[name=&#39;_method&#39;][value=&#39;delete&#39;]&quot;, 1</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="15">
+            
+              <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">      assert_select &quot;input[type=&#39;submit&#39;],button&quot; # Ensure there&#39;s a submit mechanism</code>
           </li>
         </div>
       

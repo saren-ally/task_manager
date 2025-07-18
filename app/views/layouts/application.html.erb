@@ -19,10 +19,13 @@
   </head>
 
   <body>
-    <hr>
-    <div id="flash" class="fixed top-4 right-4 z-50"></div>
+
+    <%= render "layouts/header"%>
     <main class="container mx-auto px-20">
-      <%= render "layouts/header"%>
+      <div class="flex justify-end">
+
+        <div id="flash" class="fixed z-50"></div>
+      </div>
       <%= render "layouts/flash"%>
       <%= yield %>
     </main>

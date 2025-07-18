@@ -1,5 +1,5 @@
 class Task < ApplicationRecord
   validates :title, :status, :due, :description, presence: true
 
-  enum :status, { in_progress: 0, completed: 1 }
+  enum :status, { "In progress": 0, "Completed": 1 }
 end

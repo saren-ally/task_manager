@@ -1,8 +1,11 @@
 <div class="flex flex-col">
-  <%= link_to "Back", tasks_path, class: "bg-gray-600 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-4" %>
+  <%= link_to tasks_path, class: "" do %>
+    <%= image_tag "back.svg", alt: "Back", class: "w-10 h-10 fill-current text-red-600 pt-1 hover:cursor-pointer" %>
+  <% end %>
 
   <div class="mt-4 flex flex-col">
-    <p class="mb-4">Create new Task:</p>
+    <h1 class="mb-4 font-bold text-2xl">Create new Task</h1>
+
 
     <!-- validation errors -->
     <% if @task.errors.any? %>

@@ -34,13 +34,13 @@ class TasksControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should create task with default status of 'in_progress'" do
+  test "should create task with default status of 'In progress'" do
     assert_difference("Task.count") do
       post tasks_url, params: {
         task: {
           title: "Another Task",
           description: "Another description",
-          status: "in_progress",
+          status: "In progress",
           due: Date.today + 3.days
         }
       }
