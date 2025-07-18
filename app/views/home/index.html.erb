@@ -1,22 +1,24 @@
-<div>
-  <div class="mt-4">
-    <p>Retrieve task by ID</p>
+<div class="flex flex-col items-center">
+  <div class="w-1/2">
+    <div class="mt-4">
+      <p>Retrieve task by ID</p>
 
-    <div class="mb-4">
-      <%= form_with url: find_task_path, local: true do |form| %>
-        <div class="flex flex-col gap-2">
-          <%= form.text_field :id, placeholder: "Enter Task ID", class: "border border-gray-400 py-2 px-4" %>
-          <%= form.submit "Retrieve", class: "bg-gray-600 hover:bg-blue-700 text-white font-bold py-2 px-4" %>
-        </div>
-      <% end %>
-    </div>
+      <div class="mb-4">
+        <%= form_with url: find_task_path, local: true do |form| %>
+          <div class="flex flex-col gap-2">
+            <%= form.text_field :id, placeholder: "Enter Task ID", class: "border border-gray-400 py-2 px-4" %>
+            <%= form.submit "Retrieve", class: "bg-gray-600 hover:bg-blue-700 text-white font-bold py-2 px-4" %>
+          </div>
+        <% end %>
+      </div>
 
-    <div class="flex flex-col pt-4 border-t-1 border-gray-400">
-      <%= link_to "Retrieve all tasks", tasks_path, class: "bg-gray-600 hover:bg-blue-700 text-white font-bold py-2 px-4" %>
-    </div>
+      <div class="flex flex-col pt-4 border-t-1 border-gray-400">
+        <%= link_to "Retrieve all tasks", tasks_path, class: "bg-gray-600 hover:bg-blue-700 text-white font-bold py-2 px-4" %>
+      </div>
 
-     <div class="mt-4 flex flex-col">
-      <%= link_to "Create task", new_task_path, class: "bg-gray-600 hover:bg-blue-700 text-white font-bold py-2 px-4" %>
+       <div class="mt-4 flex flex-col">
+        <%= link_to "Create task", new_task_path, class: "bg-gray-600 hover:bg-blue-700 text-white font-bold py-2 px-4" %>
+      </div>
     </div>
   </div>
 </div>
