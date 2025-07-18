@@ -1,12 +1,14 @@
-<div class="container mx-auto font-bold grid grid-cols-2 items-center justify-between py-2 px-20 mb-4 border-b mb-10">
+<div class="container mx-auto font-bold flex md:grid md:grid-cols-2 gap-4 items-center justify-between py-2 px-4 md:px-20 mb-4 border-b mb-10">
   <div class="flex flex-col">
     <h1><%= link_to "Task Manager", root_path, class: "text-4xl font-semibold" %></h1>
     <p class="font-normal text-sm">Plan like a genius. Execute like a villain.</p>
   </div>
 
   <div class="flex items-baseline gap-10">
-    <%= link_to root_path do %>
-      <%= image_tag "home-cropped.svg", alt: "Task Manager", class: "w-14 h-14" %>
+    <% unless controller.controller_name == "home" && controller.action_name == "index" %>
+      <%= link_to root_path do %>
+        <%= image_tag "home-cropped.svg", alt: "Task Manager", class: "w-14 h-14" %>
+      <% end %>
     <% end %>
 
     <% unless controller.controller_name == "tasks" && controller.action_name == "index" %>
