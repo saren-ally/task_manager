@@ -6,7 +6,7 @@
       <div class="mb-4" data-controller="validate-form">
         <%= form_with url: find_task_path, local: true, data: { action: "submit->validate-form#validate" } do |form| %>
           <div class="flex flex-col gap-2 w-full">
-            <%= form.text_field :id, placeholder: "Enter Task ID",
+            <%= form.text_field :id, placeholder: "Enter Task ID (use 36 to test)",
                   class: "border border-gray-400 py-2 px-4",
                   data: { validate_form_target: "idField" } %>
 
