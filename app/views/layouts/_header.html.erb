@@ -1,5 +1,7 @@
-<div class="text-white. font-bold container mx-auto flex justify-center bg-gray-500. py-5 mb-4">
+<div class="font-bold container mx-auto grid grid-cols-2 items-center justify-between py-5 px-4 mb-4 border-b">
+  <h1 class="font-bold. text-4xl font-semibold">Task Manager</h1>
+
   <%= link_to root_path do %>
-    <span class="text-3xl cursor-pointer"><i class="fa fa-home "></i></span>
+    <%= image_tag "home.svg", alt: "Task Manager", class: "w-14 h-14" %>
   <% end %>
 </div>

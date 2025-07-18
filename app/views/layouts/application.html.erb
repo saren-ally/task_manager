@@ -19,11 +19,11 @@
   </head>
 
   <body>
+    <hr>
     <div id="flash" class="fixed top-4 right-4 z-50"></div>
-
-    <%= render "layouts/header"%>
     <main class="container mx-auto px-20">
-    <%= render "layouts/flash"%>
+      <%= render "layouts/header"%>
+      <%= render "layouts/flash"%>
       <%= yield %>
     </main>
     <% render "layouts/footer"%>
