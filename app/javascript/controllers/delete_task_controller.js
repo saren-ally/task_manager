@@ -7,7 +7,6 @@ export default class extends Controller {
     if (event.detail.success) {
       this.formTarget.closest("[id^='task-']").remove();
 
-      // Optionally show flash
       const flash = document.querySelector("#flash");
       if (flash) {
         flash.innerHTML = `
