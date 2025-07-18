@@ -19,7 +19,9 @@
   </head>
 
   <body>
-
+    <%# FOUC bug fix for mozilla. Weird but works! %>
+    <%# <!-- Bug in question: https://bugzilla.mozilla.org/show_bug.cgi?id=1404468 --> %>
+    <script>0</script>
     <%= render "layouts/header"%>
     <main class="container mx-auto px-4 md:px-20">
       <div class="flex justify-end">
