@@ -1,24 +1,41 @@
-# README
+# Task Manager
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple task management web app built with Ruby On Rails.
 
-Things you may want to cover:
+##  Live Demo
 
-* Ruby version
+https://mojtaskmanager-d5c3fde9596b.herokuapp.com/
 
-* System dependencies
 
-* Configuration
+## Features
 
-* Database creation
+- Create tasks with a title, description, and due date
+- View a list of all tasks
+- Delete tasks asynchronously with Javascript (Turbo + Stimulus)
+- Clean, responsive UI built with Tailwind CSS
 
-* Database initialization
+## Tech Stack
 
-* How to run the test suite
+- **Ruby on Rails** 7.2.2
+- **Tailwind CSS** 4
+- **StimulusJS**
+- **Hotwire / Turbo**
+- **Minitest** for testing
+- **SimpleCov** with over **97% test coverage**
+- Deployed on **Heroku**
 
-* Services (job queues, cache servers, search engines, etc.)
+## Installation
 
-* Deployment instructions
+To run the app locally:
 
-* ...
+```bash
+git clone https://github.com/your-username/task-manager.git
+cd task-manager
+bundle install
+yarn install
+rails db:setup
+bin/dev
+
+## test suite
+rails test
+open coverage/index.html
